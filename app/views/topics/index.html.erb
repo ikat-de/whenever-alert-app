@@ -11,10 +11,14 @@
 
 <% @topics.each do |topic| %>
   <p>====================================</p>
+  <p>topic_id：<%= topic.id %></p>
   <p>コメント：<%= topic.content %></p>
-  <p>作られた時間：<%= topic.deadline.strftime("%H時%M分") %></p>
+  <p>締め切り時間：<%= topic.deadline.strftime("%H時%M分") %></p>
+  <p>status：<%= topic.status %></p>
+  <%= link_to 'コミット', topics_success_path(topic_id: topic.id), method: :post %>
+  <p>====================================</p>
 <% end %>
 
 
-<%= link_to "削除", "/topics/destroy", method: "post" %>
+<%= link_to "全て削除", "/topics/destroy", method: "post" %>
 

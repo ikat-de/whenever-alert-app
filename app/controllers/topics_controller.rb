@@ -10,6 +10,14 @@ class TopicsController < ApplicationController
     redirect_to action: :index
   end
   
+  def success
+    @topic = Topic.find_by(id: params[:topic_id])
+    @topic.status = "success"
+    @topic.save
+
+    redirect_to action: :index
+  end
+  
   def destroy
     @topics = Topic.all
     
