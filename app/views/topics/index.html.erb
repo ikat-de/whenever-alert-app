@@ -14,6 +14,19 @@
   <p>topic_id：<%= topic.id %></p>
   <p>コメント：<%= topic.content %></p>
   <p>締め切り時間：<%= topic.deadline.strftime("%H時%M分") %></p>
+  <p>deadline_id：<%= topic.deadline_id %></p>
+  <p>status：<%= topic.status %></p>
+  <%= link_to 'コミット', topics_success_path(topic_id: topic.id), method: :post %>
+  <p>====================================</p>
+<% end %>
+
+<h2>failure_topics</h2>
+<% @failure_topics.each do |topic| %>
+  <p>====================================</p>
+  <p>topic_id：<%= topic.id %></p>
+  <p>コメント：<%= topic.content %></p>
+  <p>締め切り時間：<%= topic.deadline.strftime("%H時%M分") %></p>
+  <p>deadline_id：<%= topic.deadline_id %></p>
   <p>status：<%= topic.status %></p>
   <%= link_to 'コミット', topics_success_path(topic_id: topic.id), method: :post %>
   <p>====================================</p>
