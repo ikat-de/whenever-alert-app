@@ -8,8 +8,8 @@ class TopicsController < ApplicationController
     @failure_topics =  Topic.where(deadline_id: current_time_id)
     
     @failure_topics.each do |failure_topic|
-     failure_topic.status = "failure"
-     failure_topic.save
+      failure_topic.status = "failure"
+      failure_topic.save
     end
   end
   

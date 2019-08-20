@@ -6,10 +6,11 @@ class Topic < ApplicationRecord
     topic.save
   end   
   
-  # def self.judge
-  #   current_time = Time.current.strftime("%H%M")
-  #   topics = Topic.where(deadline: time)
-  # end
+  def self.failure_auto
+    failure_topic =  Topic.where(deadline_id: current_time_id)
+    failure_topic.status = "failure"
+    failure_topic.save
+  end
 
   
 end
