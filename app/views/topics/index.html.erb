@@ -3,7 +3,7 @@
 
 
 <%= form_tag("/topics/create") do %>
-  <input type="time" name="deadline" min="00:00" max="24:00">
+  <input type="time" name="deadline" min="00:00" max="24:00" value="00:00:00">
   <textarea name="content"></textarea>
   <input type="submit" value="新規作成">
 <% end %>

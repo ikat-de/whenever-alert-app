@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_20_074804) do
+ActiveRecord::Schema.define(version: 2019_08_20_110803) do
 
   create_table "topics", force: :cascade do |t|
-    t.string "content"
+    t.string "content", default: "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.time "deadline"
+    t.time "deadline", default: "2000-01-01 11:19:09"
     t.string "status", default: "judging"
     t.integer "deadline_id", default: 1111
   end

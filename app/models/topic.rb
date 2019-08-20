@@ -1,5 +1,8 @@
 class Topic < ApplicationRecord
   
+  validates :content, presence: true  
+  validates :deadline, presence: true  
+  
 
   def self.new_auto
     topic = Topic.new(content: "Hello World", deadline: Time.current )
